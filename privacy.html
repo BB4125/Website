@@ -297,12 +297,12 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 6px; border-ra
 .store-links { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: max-content; max-width: 100%; margin-inline: auto; gap: 8px; }
 .game-card .store-links { padding: 0 12px 12px; }
 .store-links > .store-link { min-width: 0; }
-.store-link { --store-border: #ffffff24; --store-hover-border: #ffffff70; --store-hover: color-mix(in srgb, var(--store-bg), #fff 9%); --store-active: color-mix(in srgb, var(--store-bg), #fff 3%); display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 9px 11px; border: 1px solid var(--store-border); border-radius: 7px; background-color: var(--store-bg); color: var(--store-text); font-size: .875rem; font-weight: 600; line-height: 1.3; transition: border-color .28s ease, background-color .28s ease, transform .28s var(--ease), box-shadow .28s ease; }
+.store-link { --store-border: #ffffff24; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 9px 11px; border: 1px solid var(--store-border); border-radius: 7px; background-color: var(--store-bg); color: var(--store-text); font-size: .875rem; font-weight: 600; line-height: 1.3; transition: transform .28s var(--ease); }
 .store-link--apple { --store-bg: #000; --store-text: #fff; --store-focus: #dce4eb; }
-.store-link--android { --store-bg: #a4c639; --store-border: #596e2c; --store-hover-border: #dfedb8; --store-hover: color-mix(in srgb, var(--store-bg), #fff 20%); --store-text: #20280e; --store-focus: #d5e69c; box-shadow: inset 0 1px 0 #efffc22e; }
+.store-link--android { --store-bg: #a4c639; --store-border: #95a298; --store-text: #20280e; --store-focus: #d5e69c; box-shadow: none; }
 .store-link svg { width: 16px; height: 18px; }
 .store-link:focus-visible { outline-color: var(--store-focus); }
-.store-link:active { background-color: var(--store-active); transform: translateY(0); box-shadow: none; }
+.store-link:active { transform: scale(.98); }
 .site-footer { border-top: 1px solid var(--line); padding: 29px 0 34px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 .footer-company { max-width: 430px; font-size: .75rem; color: #a5b2bf; letter-spacing: .015em; line-height: 1.8; }
@@ -352,10 +352,7 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 6px; border-ra
   .wordmark:hover { border-color: #ffffff47; box-shadow: inset 0 1px 1px #ffffff20, inset 0 -1px 1px #07131f40, 0 14px 34px #0000002b, 0 2px 6px #00000014; }
   .wordmark:hover::before { opacity: 1; }
   .button-primary:hover:not(:active) { background-color: #25cdf7; border-color: #ffffff70; transform: translateY(-2px); box-shadow: inset 0 1px 0 #ffffff50, 0 5px 0 #0084a9, 0 14px 28px #00000024; }
-  .store-link:hover { background-color: var(--store-hover); border-color: var(--store-hover-border); transform: translateY(-2px); box-shadow: 0 6px 14px #00000029; }
-  .store-link--android:hover { box-shadow: inset 0 1px 0 #f3ffd54d, 0 6px 14px #00000029; }
-  .store-link:active { background-color: var(--store-active); transform: translateY(0); box-shadow: none; }
-  .game-hero .store-link:hover { transform: none; }
+  .store-link:hover:not(:active) { transform: scale(1.035); }
   .game-card:has(.game-main-link:hover) { border-color: #00bff361; background: #25333f; }
   .game-main-link:hover .game-art img { transform: translateY(-4px); }
 }
@@ -419,7 +416,7 @@ a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 6px; border-ra
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .store-link:hover, .store-link:active { transform: none; }
+  .store-link:hover:not(:active), .store-link:active { transform: none; }
   .button-primary:hover:not(:active), .button-primary:active { transform: none; }
 }
 
